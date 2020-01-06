@@ -13,7 +13,6 @@ MenuWindow::MenuWindow(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
     timer->start(1000);
-
 }
 
 MenuWindow::~MenuWindow()

@@ -6,24 +6,30 @@ QT += multimedia multimediawidgets
 HEADERS = \
     camera.h \
     menuwindow.h \
+    photosviewerwindow.h \
     settingwindow.h \
     systeminfowindow.h \
-    timesettingwindow.h
+    timesettingwindow.h \
+    videosviewerwindow.h
 
 SOURCES = \
     main.cpp \
     camera.cpp \
     menuwindow.cpp \
+    photosviewerwindow.cpp \
     settingwindow.cpp \
     systeminfowindow.cpp \
-    timesettingwindow.cpp
+    timesettingwindow.cpp \
+    videosviewerwindow.cpp
 
 FORMS += \
     camera.ui \
     menuwindow.ui \
+    photosviewerwindow.ui \
     settingwindow.ui \
     systeminfowindow.ui \
-    timesettingwindow.ui
+    timesettingwindow.ui \
+    videosviewerwindow.ui
 
 RESOURCES += camera.qrc
 

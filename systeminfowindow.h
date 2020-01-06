@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::SystemInfoWindow *ui;
+    QTimer *timer;
+
+private slots:
+    void timerUpdate();
 };
 
 #endif // SYSTEMINFOWINDOW_H

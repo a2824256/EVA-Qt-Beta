@@ -17,6 +17,12 @@ public:
 
 private:
     Ui::TimeSettingWindow *ui;
+    QTimer *timer;
+
+private slots:
+    void timerUpdate();
+
 };
+
 
 #endif // TIMESETTINGWINDOW_H

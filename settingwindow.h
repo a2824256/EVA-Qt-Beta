@@ -21,9 +21,11 @@ public:
 private slots:
     void on_returnButton_clicked();
     void receiveMenu();
+    void timerUpdate();
 
 private:
     Ui::SettingWindow *ui;
+    QTimer *timer;
 };
 
 #endif // SETTINGWINDOW_H
