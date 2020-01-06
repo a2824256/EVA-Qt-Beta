@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/shutter.svg</file>
+        <file>images/menu.svg</file>
+        <file>images/record.svg</file>
+        <file>images/recording.svg</file>
+        <file>images/takephoto.svg</file>
+        <file>images/takephoto.png</file>
+        <file>images/photos.svg</file>
+        <file>images/video.svg</file>
+        <file>images/return.svg</file>
+        <file>images/setting.svg</file>
+    </qresource>
+</RCC>
