@@ -51,6 +51,12 @@
 #include "camera.h"
 #include "menuwindow.h"
 #include "settingwindow.h"
+#include "settingwindow.h"
+#include "systeminfowindow.h"
+#include "timesettingwindow.h"
+#include "videosettings.h"
+#include "photosviewerwindow.h"
+
 #include <QtWidgets>
 int main(int argc, char *argv[])
 {
@@ -60,9 +66,17 @@ int main(int argc, char *argv[])
     camera.show();
     SettingWindow setting;
     MenuWindow menu;
+    SystemInfoWindow systeminfo;
+    TimeSettingWindow timesetting;
+    PhotosViewerWindow photoviewer;
     QObject::connect(&camera,SIGNAL(showMenu()),&menu,SLOT(receiveCamera()));
     QObject::connect(&menu,SIGNAL(showCamera()),&camera,SLOT(receiveMenu()));
     QObject::connect(&setting,SIGNAL(showMenu()),&menu,SLOT(receiveSetting()));
     QObject::connect(&menu,SIGNAL(showSetting()),&setting,SLOT(receiveMenu()));
+    QObject::connect(&setting,SIGNAL(showSystemInfo()),&systeminfo,SLOT(receiveSetting()));
+    QObject::connect(&setting,SIGNAL(showTimeSetting()),&timesetting,SLOT(receiveSetting()));
+    QObject::connect(&timesetting,SIGNAL(showSetting()),&setting,SLOT(receiveTimeSetting()));
+    QObject::connect(&systeminfo,SIGNAL(showSetting()),&setting,SLOT(receiveSystemInfo()));
+    QObject::connect(&menu,SIGNAL(showPhotoViewer()),&photoviewer,SLOT(receiveMenu()));
     return app.exec();
 };

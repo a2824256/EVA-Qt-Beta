@@ -11,6 +11,8 @@ class TimeSettingWindow : public QMainWindow
 {
     Q_OBJECT
 
+signals:
+    void showSetting();
 public:
     explicit TimeSettingWindow(QWidget *parent = nullptr);
     ~TimeSettingWindow();
@@ -21,7 +23,9 @@ private:
 
 private slots:
     void timerUpdate();
+    void receiveSetting();
 
+    void on_returnButton_clicked();
 };
 
 

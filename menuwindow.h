@@ -14,6 +14,7 @@ class MenuWindow : public QMainWindow
 signals:
     void showCamera();
     void showSetting();
+    void showPhotoViewer();
 
 public:
     explicit MenuWindow(QWidget *parent = nullptr);
@@ -30,6 +31,8 @@ private slots:
 
     void on_returnButton_clicked();
     void on_settingButton_clicked();
+    void on_photosButton_clicked();
+    void on_videoButton_clicked();
 };
 
 #endif // MENUWINDOW_H

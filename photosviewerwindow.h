@@ -17,6 +17,12 @@ public:
 
 private:
     Ui::PhotosViewerWindow *ui;
+    QTimer *timer;
+    int photosNumber;
+
+private slots:
+    void receiveMenu();
+    void timerUpdate();
 };
 
 #endif // PHOTOSVIEWERWINDOW_H

@@ -10,6 +10,7 @@ SettingWindow::SettingWindow(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
     timer->start(1000);
+    setWindowFlags(Qt::FramelessWindowHint);
 }
 
 
@@ -29,5 +30,25 @@ void SettingWindow::on_returnButton_clicked()
 }
 
 void  SettingWindow::receiveMenu(){
+    this->show();
+}
+
+void SettingWindow::on_systemInfoButton_clicked()
+{
+    this->hide();
+    emit showSystemInfo();
+}
+
+void SettingWindow::on_timeButton_clicked()
+{
+    this->hide();
+    emit showTimeSetting();
+}
+
+void SettingWindow::receiveTimeSetting(){
+    this->show();
+}
+
+void SettingWindow::receiveSystemInfo(){
     this->show();
 }

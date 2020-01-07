@@ -6,6 +6,7 @@ VideosViewerWindow::VideosViewerWindow(QWidget *parent) :
     ui(new Ui::VideosViewerWindow)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::FramelessWindowHint);
 }
 
 VideosViewerWindow::~VideosViewerWindow()

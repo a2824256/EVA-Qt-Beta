@@ -10,7 +10,8 @@ class SystemInfoWindow;
 class SystemInfoWindow : public QMainWindow
 {
     Q_OBJECT
-
+signals:
+    void showSetting();
 public:
     explicit SystemInfoWindow(QWidget *parent = nullptr);
     ~SystemInfoWindow();
@@ -21,6 +22,8 @@ private:
 
 private slots:
     void timerUpdate();
+    void receiveSetting();
+    void on_returnButton_clicked();
 };
 
 #endif // SYSTEMINFOWINDOW_H

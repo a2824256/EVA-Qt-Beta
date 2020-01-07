@@ -45,3 +45,14 @@ void MenuWindow::on_settingButton_clicked()
     this->hide();
     emit showSetting();
 }
+
+void MenuWindow::on_photosButton_clicked()
+{
+    this->hide();
+    emit showPhotoViewer();
+}
+
+void MenuWindow::on_videoButton_clicked()
+{
+
+}
