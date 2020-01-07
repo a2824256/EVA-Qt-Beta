@@ -63,12 +63,13 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     Camera camera;
-    camera.show();
+//    camera.show();
     SettingWindow setting;
     MenuWindow menu;
     SystemInfoWindow systeminfo;
     TimeSettingWindow timesetting;
     PhotosViewerWindow photoviewer;
+    photoviewer.show();
     QObject::connect(&camera,SIGNAL(showMenu()),&menu,SLOT(receiveCamera()));
     QObject::connect(&menu,SIGNAL(showCamera()),&camera,SLOT(receiveMenu()));
     QObject::connect(&setting,SIGNAL(showMenu()),&menu,SLOT(receiveSetting()));

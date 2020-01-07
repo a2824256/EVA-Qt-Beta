@@ -26,6 +26,9 @@ PhotosViewerWindow::PhotosViewerWindow(QWidget *parent) :
         qDebug()<<"number:"<<0<<endl;
     }else{
         qDebug()<<"number:"<<list.count()<<endl;
+        for(int i = 0; i<list.count();i++){
+            qDebug()<<list[i]<<endl;
+        }
     }
     setWindowFlags(Qt::FramelessWindowHint);
 }

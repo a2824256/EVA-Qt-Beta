@@ -99,7 +99,7 @@ Camera::Camera() : ui(new Ui::Camera)
     ui->menuButton->raise();
 
     setWindowFlags(Qt::FramelessWindowHint);
-    setAttribute(Qt::WA_TranslucentBackground, true);
+//    setAttribute(Qt::WA_TranslucentBackground, true);
 
 }
 void Camera::timerUpdate(){
