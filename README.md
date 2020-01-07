@@ -33,3 +33,9 @@
 ## 截图
 - 拍照&录像 <br/>
 ![拍照&录像](https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/4851578384434_.pic.jpg)
+
+- 图片列表(点击放大) <br/>
+![图片列表](https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/4861578385247_.pic.jpg)
+
+- 调整系统时间 <br/>
+![调整系统时间](https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/4871578385280_.pic.jpg)
