@@ -56,20 +56,23 @@
 #include "timesettingwindow.h"
 #include "videosettings.h"
 #include "photosviewerwindow.h"
+#include "singlephotoviewerwindow.h"
 
 #include <QtWidgets>
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-
+    //页面实例
     Camera camera;
-//    camera.show();
     SettingWindow setting;
     MenuWindow menu;
     SystemInfoWindow systeminfo;
     TimeSettingWindow timesetting;
     PhotosViewerWindow photoviewer;
+    SinglePhotoViewerWindow singlephoto;
+    //主界面
     photoviewer.show();
+    //页面跳转
     QObject::connect(&camera,SIGNAL(showMenu()),&menu,SLOT(receiveCamera()));
     QObject::connect(&menu,SIGNAL(showCamera()),&camera,SLOT(receiveMenu()));
     QObject::connect(&setting,SIGNAL(showMenu()),&menu,SLOT(receiveSetting()));
@@ -80,5 +83,8 @@ int main(int argc, char *argv[])
     QObject::connect(&systeminfo,SIGNAL(showSetting()),&setting,SLOT(receiveSystemInfo()));
     QObject::connect(&menu,SIGNAL(showPhotoViewer()),&photoviewer,SLOT(receiveMenu()));
     QObject::connect(&photoviewer,SIGNAL(showMenu()),&menu,SLOT(receivePhotoViewer()));
+    QObject::connect(&singlephoto,SIGNAL(showPhotoViewer()),&photoviewer,SLOT(receivePhoto()));
+    //跳转+图片路径传递
+    QObject::connect(&photoviewer,SIGNAL(showPhoto(QString)),&singlephoto,SLOT(receiveSinglePhoto(QString)));
     return app.exec();
 };

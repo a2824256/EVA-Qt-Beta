@@ -90,7 +90,7 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">QProgressBar {   border: 2px solid grey;   border-radius: 5px;   background-color: #FFFFFF;}QProgressBar::chunk {   background-color: #00FF00;   width: 20px;}QProgressBar {   border: 2px solid grey;   border-radius: 5px;   text-align: center;}</string>
+        <string notr="true">QProgressBar {   color:black;border: 2px solid grey;   border-radius: 5px;   background-color: #FFFFFF;}QProgressBar::chunk {   background-color: #00FF00;   width: 20px;}QProgressBar {   border: 2px solid grey;   border-radius: 5px;   text-align: center;}</string>
        </property>
        <property name="value">
         <number>24</number>
@@ -180,10 +180,19 @@
             <height>120</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>25</pointsize>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="styleSheet">
            <string notr="true">QSpinBox{
- height:30px;
- width:50px;
+color:black;
+height:30px;
+width:50px;
 background-color:white;
 }
 
@@ -201,7 +210,7 @@ width:70px;
            <number>2019</number>
           </property>
           <property name="maximum">
-           <number>2030</number>
+           <number>2050</number>
           </property>
          </widget>
         </item>
@@ -237,10 +246,19 @@ width:70px;
             <height>120</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>25</pointsize>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="styleSheet">
            <string notr="true">QSpinBox{
- height:30px;
- width:50px;
+color:black;
+height:30px;
+width:50px;
 background-color:white;
 }
 
@@ -294,10 +312,19 @@ width:70px;
             <height>120</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>25</pointsize>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="styleSheet">
            <string notr="true">QSpinBox{
- height:30px;
- width:50px;
+color:black;
+height:30px;
+width:50px;
 background-color:white;
 }
 
@@ -363,10 +390,19 @@ width:70px;
             <height>120</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>25</pointsize>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="styleSheet">
            <string notr="true">QSpinBox{
- height:30px;
- width:80px;
+color:black;
+height:30px;
+width:80px;
 background-color:white;
 }
 
@@ -411,10 +447,19 @@ width:100px;
             <height>120</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>25</pointsize>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="styleSheet">
            <string notr="true">QSpinBox{
- height:30px;
- width:80px;
+color:black;
+height:30px;
+width:80px;
 background-color:white;
 }
 

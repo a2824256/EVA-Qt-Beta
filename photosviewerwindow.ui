@@ -108,7 +108,7 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">QProgressBar {   border: 2px solid grey;   border-radius: 5px;   background-color: #FFFFFF;}QProgressBar::chunk {   background-color: #00FF00;   width: 20px;}QProgressBar {   border: 2px solid grey;   border-radius: 5px;   text-align: center;}</string>
+        <string notr="true">QProgressBar {   color:black;border: 2px solid grey;   border-radius: 5px;   background-color: #FFFFFF;}QProgressBar::chunk {   background-color: #00FF00;   width: 20px;}QProgressBar {   border: 2px solid grey;   border-radius: 5px;   text-align: center;}</string>
        </property>
        <property name="value">
         <number>24</number>
@@ -172,6 +172,141 @@
         <property name="spacing">
          <number>0</number>
         </property>
+        <property name="topMargin">
+         <number>35</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="photoLabel_1">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="textLabel_1">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="photoLabel_2">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="textLabel_2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="photoLabel_3">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="textLabel_3">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
      </item>
@@ -193,6 +328,141 @@
         <property name="spacing">
          <number>0</number>
         </property>
+        <property name="topMargin">
+         <number>35</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="photoLabel_4">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="textLabel_4">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="photoLabel_5">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="textLabel_5">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="photoLabel_6">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="textLabel_6">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
      </item>
@@ -214,15 +484,24 @@
         <property name="spacing">
          <number>0</number>
         </property>
+        <property name="topMargin">
+         <number>10</number>
+        </property>
         <item>
          <widget class="QPushButton" name="preButton">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>160</width>
             <height>100</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>10000</width>
+            <height>90</height>
            </size>
           </property>
           <property name="font">
@@ -242,7 +521,7 @@
          <widget class="QPushButton" name="nextButton">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>160</width>
             <height>100</height>
            </size>
           </property>
@@ -263,7 +542,7 @@
          <widget class="QPushButton" name="returnButton">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>160</width>
             <height>100</height>
            </size>
           </property>

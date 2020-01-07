@@ -1,13 +1,13 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#include <QObject>
-#include <QWidget>
-
+#include <string.h>
+#include <QtWidgets>
 class common
 {
 public:
     common();
 };
 
+void Qlog(QString log);
 #endif // COMMON_H
