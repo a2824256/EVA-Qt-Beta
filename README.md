@@ -31,5 +31,5 @@
 - 系统时间设置页面 (v)
 
 ## 截图
-- 拍照&录像
+- 拍照&录像 <br/>
 ![拍照&录像](https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/4851578384434_.pic.jpg)
