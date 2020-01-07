@@ -78,5 +78,6 @@ int main(int argc, char *argv[])
     QObject::connect(&timesetting,SIGNAL(showSetting()),&setting,SLOT(receiveTimeSetting()));
     QObject::connect(&systeminfo,SIGNAL(showSetting()),&setting,SLOT(receiveSystemInfo()));
     QObject::connect(&menu,SIGNAL(showPhotoViewer()),&photoviewer,SLOT(receiveMenu()));
+    QObject::connect(&photoviewer,SIGNAL(showMenu()),&menu,SLOT(receivePhotoViewer()));
     return app.exec();
 };

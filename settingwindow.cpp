@@ -52,3 +52,6 @@ void SettingWindow::receiveTimeSetting(){
 void SettingWindow::receiveSystemInfo(){
     this->show();
 }
+
+
+

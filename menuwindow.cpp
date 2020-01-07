@@ -56,3 +56,7 @@ void MenuWindow::on_videoButton_clicked()
 {
 
 }
+
+void MenuWindow::receivePhotoViewer(){
+    this->show();
+}

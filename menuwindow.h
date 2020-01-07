@@ -28,7 +28,7 @@ private slots:
     void timerUpdate();
     void receiveCamera();
     void receiveSetting();
-
+    void receivePhotoViewer();
     void on_returnButton_clicked();
     void on_settingButton_clicked();
     void on_photosButton_clicked();

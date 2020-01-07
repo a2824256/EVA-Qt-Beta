@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="horizontalWidget" native="true">
+   <widget class="QWidget" name="hor_1" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -117,7 +117,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="horizontalWidget" native="true">
+   <widget class="QWidget" name="hor_2" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -215,7 +215,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="preButton">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -239,7 +239,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="nextButton">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -260,7 +260,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="returnButton">
           <property name="minimumSize">
            <size>
             <width>0</width>

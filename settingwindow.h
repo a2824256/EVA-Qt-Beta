@@ -25,6 +25,7 @@ private slots:
     void receiveMenu();
     void receiveTimeSetting();
     void receiveSystemInfo();
+
     void timerUpdate();
 
     void on_systemInfoButton_clicked();

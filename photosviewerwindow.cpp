@@ -10,7 +10,7 @@ PhotosViewerWindow::PhotosViewerWindow(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
     timer->start(1000);
-    QString path = "/home/zxbio/图片";
+
     QDir dir(path);
     if (!dir.exists()) {
         return;
@@ -19,6 +19,7 @@ PhotosViewerWindow::PhotosViewerWindow(QWidget *parent) :
     QStringList filters;
     filters << "*.jpg";
     dir.setNameFilters(filters);
+//    file list
     QStringList list = dir.entryList();
     if (list.count() <= 0)
     {
@@ -40,4 +41,10 @@ void PhotosViewerWindow::receiveMenu(){
 
 void PhotosViewerWindow::timerUpdate(){
     ui->datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+}
+
+void PhotosViewerWindow::on_returnButton_clicked()
+{
+    this->hide();
+    emit showMenu();
 }
