@@ -15,6 +15,7 @@ signals:
     void showCamera();
     void showSetting();
     void showPhotoViewer();
+    void showVideosViewer();
 
 public:
     explicit MenuWindow(QWidget *parent = nullptr);

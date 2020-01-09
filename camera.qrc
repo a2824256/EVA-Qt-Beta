@@ -10,5 +10,6 @@
         <file>images/video.svg</file>
         <file>images/return.svg</file>
         <file>images/setting.svg</file>
+        <file>images/takephoto_disable.svg</file>
     </qresource>
 </RCC>

@@ -54,7 +54,8 @@ void MenuWindow::on_photosButton_clicked()
 
 void MenuWindow::on_videoButton_clicked()
 {
-
+    this->hide();
+    emit showVideosViewer();
 }
 
 void MenuWindow::receivePhotoViewer(){

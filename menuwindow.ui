@@ -22,7 +22,7 @@
    <string notr="true">background-color:black;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="horizontalWidget" native="true">
+   <widget class="QWidget" name="hor_1" native="true">
     <property name="geometry">
      <rect>
       <x>-1</x>
@@ -117,83 +117,32 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QPushButton" name="photosButton">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>200</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>30</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-           <kerning>true</kerning>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:white;background-color:#FF8C00</string>
-         </property>
-         <property name="text">
-          <string>照片</string>
-         </property>
-         <property name="icon">
-          <iconset resource="camera.qrc">
-           <normaloff>:/images/photos.svg</normaloff>:/images/photos.svg</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>50</width>
-           <height>50</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="videoButton">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>200</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>30</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:white;background-color:#FF8C00</string>
-         </property>
-         <property name="text">
-          <string>视频</string>
-         </property>
-         <property name="icon">
-          <iconset resource="camera.qrc">
-           <normaloff>:/images/video.svg</normaloff>:/images/video.svg</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>50</width>
-           <height>50</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <property name="bottomMargin">
+      <number>10</number>
+     </property>
      <item row="3" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <layout class="QHBoxLayout" name="hor_3">
        <item>
         <widget class="QPushButton" name="settingButton">
          <property name="minimumSize">
           <size>
-           <width>0</width>
+           <width>280</width>
            <height>200</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>280</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="font">
@@ -220,11 +169,36 @@
         </widget>
        </item>
        <item>
+        <widget class="QLabel" name="spacebox_2">
+         <property name="minimumSize">
+          <size>
+           <width>10</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>0</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="returnButton">
          <property name="minimumSize">
           <size>
-           <width>0</width>
+           <width>280</width>
            <height>200</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>280</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="font">
@@ -251,6 +225,120 @@
         </widget>
        </item>
       </layout>
+     </item>
+     <item row="2" column="0">
+      <widget class="QWidget" name="hor_2" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="photosButton">
+          <property name="minimumSize">
+           <size>
+            <width>280</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>280</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>30</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:white;background-color:#FF8C00</string>
+          </property>
+          <property name="text">
+           <string>照片</string>
+          </property>
+          <property name="icon">
+           <iconset resource="camera.qrc">
+            <normaloff>:/images/photos.svg</normaloff>:/images/photos.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="spacebox_1">
+          <property name="minimumSize">
+           <size>
+            <width>10</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>10</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="videoButton">
+          <property name="minimumSize">
+           <size>
+            <width>280</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>280</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>30</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:white;background-color:#FF8C00</string>
+          </property>
+          <property name="text">
+           <string>视频</string>
+          </property>
+          <property name="icon">
+           <iconset resource="camera.qrc">
+            <normaloff>:/images/video.svg</normaloff>:/images/video.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </item>
     </layout>
    </widget>

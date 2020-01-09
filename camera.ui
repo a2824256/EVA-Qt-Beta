@@ -332,7 +332,7 @@
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>48</height>
+           <height>50</height>
           </size>
          </property>
          <property name="focusPolicy">
@@ -346,7 +346,13 @@
          </property>
          <property name="icon">
           <iconset resource="camera.qrc">
-           <normaloff>:/images/takephoto.svg</normaloff>:/images/takephoto.svg</iconset>
+           <normaloff>:/images/takephoto.svg</normaloff>
+           <disabledoff>:/images/takephoto_disable.svg</disabledoff>
+           <disabledon>:/images/takephoto.svg</disabledon>
+           <activeoff>:/images/takephoto_disable.svg</activeoff>
+           <activeon>:/images/takephoto.svg</activeon>
+           <selectedoff>:/images/takephoto_disable.svg</selectedoff>
+           <selectedon>:/images/takephoto.svg</selectedon>:/images/takephoto.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -364,7 +370,7 @@
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>48</height>
+           <height>50</height>
           </size>
          </property>
          <property name="text">
@@ -393,7 +399,7 @@
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>48</height>
+           <height>50</height>
           </size>
          </property>
          <property name="focusPolicy">
@@ -532,6 +538,22 @@
     <hint type="sourcelabel">
      <x>105</x>
      <y>451</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recordButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Camera</receiver>
+   <slot>record()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>529</x>
+     <y>448</y>
     </hint>
     <hint type="destinationlabel">
      <x>319</x>

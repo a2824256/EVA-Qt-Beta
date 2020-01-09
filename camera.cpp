@@ -100,8 +100,32 @@ Camera::Camera() : ui(new Ui::Camera)
 
     setWindowFlags(Qt::FramelessWindowHint);
 //    setAttribute(Qt::WA_TranslucentBackground, true);
-
 }
+
+void Camera::takephotoButtonStatus(bool enable){
+    if(enable){
+        QPixmap takephotoEnableSVG("/Users/alexleung/Downloads/qt_project/EVA-Qt-Beta/images/takephoto.svg");
+        QIcon takephotoEnableIcon(takephotoEnableSVG);
+        ui->takeImageButton->setIcon(takephotoEnableIcon);
+    }else{
+        QPixmap takephotoEnableSVG("/Users/alexleung/Downloads/qt_project/EVA-Qt-Beta/images/takephoto_disable.svg");
+        QIcon takephotoEnableIcon(takephotoEnableSVG);
+        ui->takeImageButton->setIcon(takephotoEnableIcon);
+    }
+}
+
+void Camera::recordButtonStatus(bool enable){
+    if(enable){
+        QPixmap recordEnableSVG("/Users/alexleung/Downloads/qt_project/EVA-Qt-Beta/images/recording.svg");
+        QIcon recordEnableIcon(recordEnableSVG);
+        ui->recordButton->setIcon(recordEnableIcon);
+    }else{
+        QPixmap recordEnableSVG("/Users/alexleung/Downloads/qt_project/EVA-Qt-Beta/images/record.svg");
+        QIcon recordEnableIcon(recordEnableSVG);
+        ui->recordButton->setIcon(recordEnableIcon);
+    }
+}
+
 void Camera::timerUpdate(){
     ui->datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
 }
@@ -144,7 +168,7 @@ void Camera::setCamera(const QCameraInfo &cameraInfo)
 //    ui->captureWidget->setTabEnabled(0, (m_camera->isCaptureModeSupported(QCamera::CaptureStillImage)));
 //    ui->captureWidget->setTabEnabled(1, (m_camera->isCaptureModeSupported(QCamera::CaptureVideo)));
 
-    updateCaptureMode();
+    updateCaptureMode(0);
     m_camera->start();
 }
 
@@ -260,22 +284,6 @@ void Camera::configureCaptureSettings()
 //    }
 //}
 
-void Camera::record()
-{
-    m_mediaRecorder->record();
-    updateRecordTime();
-}
-
-void Camera::pause()
-{
-    m_mediaRecorder->pause();
-}
-
-void Camera::stop()
-{
-    m_mediaRecorder->stop();
-}
-
 void Camera::setMuted(bool muted)
 {
     m_mediaRecorder->setMuted(muted);
@@ -344,11 +352,36 @@ void Camera::stopCamera()
     m_camera->stop();
 }
 
-void Camera::updateCaptureMode()
+void Camera::record()
 {
-    int tabIndex = 0;
-    QCamera::CaptureModes captureMode = tabIndex == 0 ? QCamera::CaptureStillImage : QCamera::CaptureVideo;
+    if(m_mediaRecorder->state() == QMediaRecorder::RecordingState){
+        stop();
+    }else{
+        updateCaptureMode(1);
+        m_mediaRecorder->record();
+        updateRecordTime();
+    }
+}
 
+void Camera::pause()
+{
+    m_mediaRecorder->pause();
+}
+
+void Camera::stop()
+{
+    m_mediaRecorder->stop();
+    updateCaptureMode(0);
+}
+
+void Camera::updateCaptureMode(int mode)
+{
+    QCamera::CaptureModes captureMode = mode == 0 ? QCamera::CaptureStillImage : QCamera::CaptureVideo;
+    if(mode == 0){
+        CaptureVideoMode = "image";
+    }else{
+        CaptureVideoMode = "video";
+    }
     if (m_camera->isCaptureModeSupported(captureMode))
         m_camera->setCaptureMode(captureMode);
 }

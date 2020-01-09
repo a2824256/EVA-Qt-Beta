@@ -72,6 +72,9 @@ public:
     Camera();
 
 private slots:
+    void takephotoButtonStatus(bool enable);
+    void recordButtonStatus(bool enable);
+
     void receiveMenu();
     void setCamera(const QCameraInfo &cameraInfo);
     void timerUpdate();
@@ -97,7 +100,7 @@ private slots:
     void updateCameraDevice(QAction *action);
 
     void updateCameraState(QCamera::State);
-    void updateCaptureMode();
+    void updateCaptureMode(int mode);
     void updateRecorderState(QMediaRecorder::State state);
     void setExposureCompensation(int index);
 
@@ -132,6 +135,7 @@ private:
     QString m_videoContainerFormat;
     bool m_isCapturingImage = false;
     bool m_applicationExiting = false;
+    QString CaptureVideoMode = "image";
 
 
 };
