@@ -464,11 +464,8 @@ void Camera::readyForCapture(bool ready)
 void Camera::addMask(QPixmap& pm, const QString& text)
 {
     QPainter painter(&pm);
-//    font.setLetterSpacing(QFont::AbsoluteSpacing, spacing);
     painter.setFont(QFont("微软雅黑", 25, QFont::Thin));
     painter.setPen(QColor(255, 255, 0));
-//    painter.translate(pm.width() / 2, -pm.width() / 2);//调整位置
-//    painter.setRenderHint(QPainter::Antialiasing, true);
     painter.drawText(990, 38, text);
     painter.setPen(QColor(255, 255, 255));
     painter.drawText(55, 38, "ZXBIOMED");
