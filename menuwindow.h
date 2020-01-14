@@ -34,6 +34,7 @@ private slots:
     void on_settingButton_clicked();
     void on_photosButton_clicked();
     void on_videoButton_clicked();
+    void receiveVideosViewer();
 };
 
 #endif // MENUWINDOW_H

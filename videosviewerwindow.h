@@ -17,23 +17,27 @@ class VideosViewerWindow : public QMainWindow
 {
     Q_OBJECT
 
+signals:
+    void showMenu();
+    void showVideo(QString VideoPath);
+
 public:
     explicit VideosViewerWindow(QWidget *parent = nullptr);
-    ~VideosViewerWindow();
+    ~VideosViewerWindow();    
 
 private:
     Ui::VideosViewerWindow *ui;
     Mat frame;
     QTimer *timer;
-    int photosNumber;
+    int VideosNumber;
     int page;
     QString path = "/Users/alexleung/Movies";
-    QString photo_1_path = "";
-    QString photo_2_path = "";
-    QString photo_3_path = "";
-    QString photo_4_path = "";
-    QString photo_5_path = "";
-    QString photo_6_path = "";
+    QString video_1_path = "";
+    QString video_2_path = "";
+    QString video_3_path = "";
+    QString video_4_path = "";
+    QString video_5_path = "";
+    QString video_6_path = "";
 
 private slots:
     QImage cvMat2QImage(Mat& mat);
@@ -42,6 +46,11 @@ private slots:
     void preButtonEnable(bool enable);
     void nextButtonEnable(bool enable);
     void updatePhotoViewer();
+    void on_returnButton_clicked();
+    void receiveVideoStop();
+
+protected:
+    bool eventFilter(QObject * watched, QEvent * event);
 };
 
 #endif // VIDEOSVIEWERWINDOW_H

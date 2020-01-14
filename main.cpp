@@ -58,6 +58,7 @@
 #include "photosviewerwindow.h"
 #include "singlephotoviewerwindow.h"
 #include "videosviewerwindow.h"
+#include "videoviewerwindow.h"
 #include <QtWidgets>
 int main(int argc, char *argv[])
 {
@@ -71,8 +72,9 @@ int main(int argc, char *argv[])
     PhotosViewerWindow photoviewer;
     SinglePhotoViewerWindow singlephoto;
     VideosViewerWindow videosviewer;
+    VideoViewerWindow videoviewer;
     //主界面
-    camera.show();
+    videosviewer.show();
     //页面跳转
     QObject::connect(&camera,SIGNAL(showMenu()),&menu,SLOT(receiveCamera()));
     QObject::connect(&menu,SIGNAL(showCamera()),&camera,SLOT(receiveMenu()));
@@ -86,6 +88,11 @@ int main(int argc, char *argv[])
     QObject::connect(&photoviewer,SIGNAL(showMenu()),&menu,SLOT(receivePhotoViewer()));
     QObject::connect(&singlephoto,SIGNAL(showPhotoViewer()),&photoviewer,SLOT(receivePhoto()));
     QObject::connect(&menu,SIGNAL(showVideosViewer()),&videosviewer,SLOT(receiveMenu()));
+    QObject::connect(&videosviewer,SIGNAL(showMenu()),&menu,SLOT(receivePhotoViewer()));
+    //视频播放结束
+    QObject::connect(&videoviewer,SIGNAL(showVideosViewer()),&videosviewer,SLOT(receiveVideoStop()));
+    //跳转+视频路径传递
+    QObject::connect(&videosviewer,SIGNAL(showVideo(QString)),&videoviewer,SLOT(receiveSingleVideo(QString)));
     //跳转+图片路径传递
     QObject::connect(&photoviewer,SIGNAL(showPhoto(QString)),&singlephoto,SLOT(receiveSinglePhoto(QString)));
     return app.exec();

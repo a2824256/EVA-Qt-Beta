@@ -460,6 +460,7 @@ void Camera::readyForCapture(bool ready)
     ui->takeImageButton->setEnabled(ready);
 }
 
+//图片保存在
 void Camera::imageSaved(int id, const QString &fileName)
 {
     Q_UNUSED(id);

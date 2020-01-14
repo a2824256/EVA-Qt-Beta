@@ -153,7 +153,11 @@
     <property name="styleSheet">
      <string notr="true">background-color:black</string>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="videoOutput"/>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

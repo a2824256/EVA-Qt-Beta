@@ -44,7 +44,7 @@ void PhotosViewerWindow::receivePhoto(){
 
 void PhotosViewerWindow::updatePhotoViewer()
 {
-    qDebug()<<"page:" + QString::number(page)<<endl;
+//    qDebug()<<"page:" + QString::number(page)<<endl;
     //获得目录
     QDir dir(path);
     if (!dir.exists()) {
@@ -63,7 +63,7 @@ void PhotosViewerWindow::updatePhotoViewer()
     photosNumber = list.count();
 //    总页数
     int totalPage = ceil(double(photosNumber)/6);
-    qDebug()<<"totalPage:" + QString::number(totalPage)<<endl;
+//    qDebug()<<"totalPage:" + QString::number(totalPage)<<endl;
     int realPage = page-1;
 //    label_1
     if(photosNumber>=1+realPage*6){
@@ -174,7 +174,7 @@ void PhotosViewerWindow::updatePhotoViewer()
         }
     }
     //最后一页
-    if (page >= totalPage) {
+    if (page >= totalPage && page != 1) {
 //        Qlog("nextButtonEnable false 4");
         nextButtonEnable(false);
 //        Qlog("preButtonEnable true 5");

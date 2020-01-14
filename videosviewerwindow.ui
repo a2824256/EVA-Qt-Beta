@@ -120,13 +120,40 @@
       <height>445</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>445</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>445</height>
+     </size>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color:black;color:white</string>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="leftMargin">
+      <number>20</number>
+     </property>
+     <property name="topMargin">
+      <number>20</number>
+     </property>
+     <property name="rightMargin">
+      <number>20</number>
+     </property>
+     <property name="bottomMargin">
+      <number>20</number>
+     </property>
      <item>
       <widget class="QWidget" name="vw_1" native="true">
        <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="topMargin">
+         <number>35</number>
+        </property>
         <item>
          <widget class="QLabel" name="photoLabel_1">
           <property name="minimumSize">
@@ -256,6 +283,9 @@
      <item>
       <widget class="QWidget" name="verticalWidget_3" native="true">
        <layout class="QVBoxLayout" name="vw_2">
+        <property name="topMargin">
+         <number>35</number>
+        </property>
         <item>
          <widget class="QLabel" name="photoLabel_4">
           <property name="minimumSize">
@@ -385,6 +415,9 @@
      <item>
       <widget class="QWidget" name="verticalWidget_2" native="true">
        <layout class="QVBoxLayout" name="vw_3">
+        <property name="topMargin">
+         <number>10</number>
+        </property>
         <item>
          <widget class="QPushButton" name="preButton">
           <property name="enabled">
