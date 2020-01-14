@@ -186,6 +186,7 @@ void Camera::keyPressEvent(QKeyEvent * event)
     case Qt::Key_Camera:
         if (m_camera->captureMode() == QCamera::CaptureStillImage) {
             takeImage();
+
         } else {
             if (m_mediaRecorder->state() == QMediaRecorder::RecordingState)
                 stop();
@@ -460,15 +461,38 @@ void Camera::readyForCapture(bool ready)
     ui->takeImageButton->setEnabled(ready);
 }
 
+void Camera::addMask(QPixmap& pm, const QString& text)
+{
+    QPainter painter(&pm);
+//    font.setLetterSpacing(QFont::AbsoluteSpacing, spacing);
+    painter.setFont(QFont("微软雅黑", 25, QFont::Thin));
+    painter.setPen(QColor(255, 255, 0));
+//    painter.translate(pm.width() / 2, -pm.width() / 2);//调整位置
+//    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.drawText(990, 38, text);
+    painter.setPen(QColor(255, 255, 255));
+    painter.drawText(55, 38, "ZXBIOMED");
+    painter.drawPixmap(5, 5,50,50,QPixmap(":/images/logo.png"));
+}
+
 //图片保存在
 void Camera::imageSaved(int id, const QString &fileName)
 {
     Q_UNUSED(id);
-    ui->tips->setText(tr("提示:图片已保存至\"%1\"").arg(QDir::toNativeSeparators(fileName)));
-
+    latestImagePath = QDir::toNativeSeparators(fileName);
+//    qDebug()<<QDir::toNativeSeparators(fileName)<<endl;
     m_isCapturingImage = false;
-    if (m_applicationExiting)
+    if (m_applicationExiting){
         close();
+    }
+    QString path = QDir::toNativeSeparators(latestImagePath);
+    QPixmap qpm(path);
+    addMask(qpm,QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+    QFile file(path);
+    file.open(QIODevice::WriteOnly);
+    qpm.save(&file, "JPEG");
+    file.close();
+    ui->tips->setText(tr("提示:图片已保存至\"%1\"").arg(latestImagePath));
 }
 
 void Camera::closeEvent(QCloseEvent *event)

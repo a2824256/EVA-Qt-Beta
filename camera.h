@@ -116,6 +116,7 @@ private slots:
     void imageSaved(int id, const QString &fileName);
 
     void on_menuButton_clicked();
+    void addMask(QPixmap& pm, const QString& text);
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
@@ -136,6 +137,7 @@ private:
     bool m_isCapturingImage = false;
     bool m_applicationExiting = false;
     QString CaptureVideoMode = "image";
+    QString latestImagePath;
 
 
 };
