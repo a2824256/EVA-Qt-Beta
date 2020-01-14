@@ -3,7 +3,7 @@
 
 ## 开发环境
 - MacOS 10.14.6 & Ubuntu 16.04
-- Qt 12.2
+- Qt 5.12.2
 
 ## 目标环境
 - 系统： Linux + Qt 12.2
@@ -39,3 +39,6 @@
 
 - 调整系统时间 <br/>
 <img src="https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/4871578385280_.pic.jpg" width="716" height="537">
+
+- 图片浏览+水印展示 <br/>
+<img src="https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/5121578991713_.pic.jpg" width="716" height="537">
