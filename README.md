@@ -43,3 +43,6 @@
 
 - 图片浏览+水印展示 <br/>
 <img src="https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/5121578991713_.pic.jpg" width="716" height="537">
+
+- 视频列表（使用opencv读取每个视频第一帧）
+<img src="https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/5131578992616_.pic.jpg" width="716" height="537">
