@@ -3,10 +3,12 @@
 
 #include <string.h>
 #include <QtWidgets>
-class common
+class Common
 {
 public:
-    common();
+    Common();
+    static QString _medicalNumber;
+    static QString _tips;
 };
 
 void Qlog(QString log);

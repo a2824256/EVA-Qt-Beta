@@ -65,3 +65,7 @@ void MenuWindow::receivePhotoViewer(){
 void MenuWindow::receiveVideosViewer(){
     this->show();
 }
+
+void MenuWindow::receiveNewMedicalRecord(){
+    this->show();
+}

@@ -1,6 +1,9 @@
 #include "common.h"
 
-common::common()
+QString Common::_medicalNumber = "";
+QString Common::_tips = "";
+
+Common::Common()
 {
 
 }

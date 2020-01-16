@@ -12,5 +12,8 @@
         <file>images/setting.svg</file>
         <file>images/takephoto_disable.svg</file>
         <file>images/logo.png</file>
+        <file>images/medicalrecord.svg</file>
+        <file>images/medicalrecord_disable.svg</file>
+        <file>images/medicalrecord_menu.svg</file>
     </qresource>
 </RCC>

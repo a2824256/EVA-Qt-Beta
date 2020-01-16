@@ -67,6 +67,7 @@ class Camera : public QMainWindow
 
 signals:
     void showMenu();
+    void showNewMedicalRecord();
 
 public:
     Camera();
@@ -74,7 +75,6 @@ public:
 private slots:
     void takephotoButtonStatus(bool enable);
     void recordButtonStatus(bool enable);
-
     void receiveMenu();
     void setCamera(const QCameraInfo &cameraInfo);
     void timerUpdate();

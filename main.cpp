@@ -59,6 +59,7 @@
 #include "singlephotoviewerwindow.h"
 #include "videosviewerwindow.h"
 #include "videoviewerwindow.h"
+#include "newmedicalrecord.h"
 #include <QtWidgets>
 int main(int argc, char *argv[])
 {
@@ -73,11 +74,16 @@ int main(int argc, char *argv[])
     SinglePhotoViewerWindow singlephoto;
     VideosViewerWindow videosviewer;
     VideoViewerWindow videoviewer;
+    newMedicalRecord newmedicalrecord;
     //主界面
-    videosviewer.show();
+    camera.show();
     //页面跳转
     QObject::connect(&camera,SIGNAL(showMenu()),&menu,SLOT(receiveCamera()));
+    QObject::connect(&camera,SIGNAL(showNewMedicalRecord()),&newmedicalrecord,SLOT(receiveCamera()));
     QObject::connect(&menu,SIGNAL(showCamera()),&camera,SLOT(receiveMenu()));
+
+    QObject::connect(&newmedicalrecord,SIGNAL(showCamera()),&menu,SLOT(receiveNewMedicalRecord()));
+
     QObject::connect(&setting,SIGNAL(showMenu()),&menu,SLOT(receiveSetting()));
     QObject::connect(&menu,SIGNAL(showSetting()),&setting,SLOT(receiveMenu()));
     QObject::connect(&setting,SIGNAL(showSystemInfo()),&systeminfo,SLOT(receiveSetting()));

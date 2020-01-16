@@ -263,8 +263,16 @@ void VideosViewerWindow::updatePhotoViewer()
     if(VideosNumber>=6+realPage*6){
         int photoLabel_6_index = 5+realPage*6;
         video_6_path = path+"/"+list[photoLabel_6_index];
-        QPixmap pixmap_6(video_6_path);
-        QPixmap realPixmap_6 = pixmap_6.scaled(QSize(160,90),  Qt::KeepAspectRatio);
+        string video_path = video_6_path.toStdString();
+        cap.open(video_path);
+        //截取视频第一帧
+        cap >> frame;
+        //将Mat数据转为QImage
+        QImage phtoto_label_6 = cvMat2QImage(frame);
+        //将Qimage转为QPixmap
+        QPixmap tempPixmap = QPixmap::fromImage(phtoto_label_6);
+        //将图片等比例缩放
+        QPixmap realPixmap_6 = tempPixmap.scaled(QSize(160,90),  Qt::KeepAspectRatio);
         ui->photoLabel_6->setPixmap(realPixmap_6);
         ui->photoLabel_6->show();
         ui->textLabel_6->setText(list[photoLabel_6_index]);

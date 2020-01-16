@@ -59,7 +59,7 @@
 #include <QMessageBox>
 #include <QPalette>
 #include <QtWidgets>
-
+#include <common.h>
 Q_DECLARE_METATYPE(QCameraInfo)
 Camera::Camera() : ui(new Ui::Camera)
 {
@@ -356,8 +356,12 @@ void Camera::stopCamera()
 void Camera::record()
 {
     if(m_mediaRecorder->state() == QMediaRecorder::RecordingState){
+        QIcon diable(":/images/record.svg");
+        ui->recordButton->setIcon(diable);
         stop();
     }else{
+        QIcon diable(":/images/recording.svg");
+        ui->recordButton->setIcon(diable);
         updateCaptureMode(1);
         m_mediaRecorder->record();
         updateRecordTime();
@@ -393,14 +397,12 @@ void Camera::updateCameraState(QCamera::State state)
     case QCamera::ActiveState:
         ui->actionStartCamera->setEnabled(false);
         ui->actionStopCamera->setEnabled(true);
-//        ui->captureWidget->setEnabled(true);
         ui->actionSettings->setEnabled(true);
         break;
     case QCamera::UnloadedState:
     case QCamera::LoadedState:
         ui->actionStartCamera->setEnabled(true);
         ui->actionStopCamera->setEnabled(false);
-//        ui->captureWidget->setEnabled(false);
         ui->actionSettings->setEnabled(false);
     }
 }
@@ -459,6 +461,8 @@ void Camera::displayCapturedImage()
 void Camera::readyForCapture(bool ready)
 {
     ui->takeImageButton->setEnabled(ready);
+    ui->menuButton->setEnabled(ready);
+//    ui->medicalRecordButton->setEnabled(ready);
 }
 
 void Camera::addMask(QPixmap& pm, const QString& text)
@@ -477,7 +481,6 @@ void Camera::imageSaved(int id, const QString &fileName)
 {
     Q_UNUSED(id);
     latestImagePath = QDir::toNativeSeparators(fileName);
-//    qDebug()<<QDir::toNativeSeparators(fileName)<<endl;
     m_isCapturingImage = false;
     if (m_applicationExiting){
         close();
@@ -509,6 +512,13 @@ void Camera::on_menuButton_clicked()
     emit showMenu();
 }
 
-void  Camera::receiveMenu(){
+void  Camera::receiveMenu()
+{
     this->show();
+}
+
+
+void Camera::receiveNewMedicalRecord(){
+    this->show();
+    ui->tips->setText(Common::_tips);
 }

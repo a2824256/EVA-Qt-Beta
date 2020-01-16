@@ -315,8 +315,11 @@
        <string notr="true">background-color:black</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="topMargin">
+        <number>2</number>
+       </property>
        <property name="bottomMargin">
-        <number>15</number>
+        <number>20</number>
        </property>
        <item>
         <widget class="QPushButton" name="takeImageButton">
@@ -328,6 +331,12 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
          </property>
          <property name="maximumSize">
           <size>
@@ -346,13 +355,7 @@
          </property>
          <property name="icon">
           <iconset resource="camera.qrc">
-           <normaloff>:/images/takephoto.svg</normaloff>
-           <disabledoff>:/images/takephoto_disable.svg</disabledoff>
-           <disabledon>:/images/takephoto.svg</disabledon>
-           <activeoff>:/images/takephoto_disable.svg</activeoff>
-           <activeon>:/images/takephoto.svg</activeon>
-           <selectedoff>:/images/takephoto_disable.svg</selectedoff>
-           <selectedon>:/images/takephoto.svg</selectedon>:/images/takephoto.svg</iconset>
+           <normaloff>:/images/takephoto.svg</normaloff>:/images/takephoto.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -367,6 +370,12 @@
        </item>
        <item>
         <widget class="QPushButton" name="menuButton">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -395,6 +404,12 @@
         <widget class="QPushButton" name="recordButton">
          <property name="enabled">
           <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
          </property>
          <property name="maximumSize">
           <size>

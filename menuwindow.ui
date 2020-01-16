@@ -267,7 +267,7 @@
            <string notr="true">color:white;background-color:#FF8C00</string>
           </property>
           <property name="text">
-           <string>照片</string>
+           <string>照片/视频</string>
           </property>
           <property name="icon">
            <iconset resource="camera.qrc">
@@ -323,11 +323,11 @@
            <string notr="true">color:white;background-color:#FF8C00</string>
           </property>
           <property name="text">
-           <string>视频</string>
+           <string>病历</string>
           </property>
           <property name="icon">
            <iconset resource="camera.qrc">
-            <normaloff>:/images/video.svg</normaloff>:/images/video.svg</iconset>
+            <normaloff>:/images/medicalrecord_menu.svg</normaloff>:/images/medicalrecord_menu.svg</iconset>
           </property>
           <property name="iconSize">
            <size>

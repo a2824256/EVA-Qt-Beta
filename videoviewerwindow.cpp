@@ -59,5 +59,6 @@ void VideoViewerWindow::receiveSingleVideo(QString videoPath){
 //}
 
 void VideoViewerWindow::mousePressEvent(QMouseEvent *e){
+    qDebug()<<e->flags()<<endl;
     player->stop();
 }

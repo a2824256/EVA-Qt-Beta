@@ -26,6 +26,7 @@ private:
     QTimer *timer;
 
 private slots:
+    void receiveNewMedicalRecord();
     void timerUpdate();
     void receiveCamera();
     void receiveSetting();
