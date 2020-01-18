@@ -9,10 +9,6 @@ MenuWindow::MenuWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(Qt::FramelessWindowHint);
-//    setAttribute(Qt::WA_TranslucentBackground, true);
-    timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
-    timer->start(1000);
 }
 
 MenuWindow::~MenuWindow()
@@ -29,10 +25,6 @@ void MenuWindow::receiveSetting(){
     this->show();
 }
 
-void MenuWindow::timerUpdate(){
-    ui->datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
-}
-
 
 void MenuWindow::on_returnButton_clicked()
 {
@@ -46,18 +38,6 @@ void MenuWindow::on_settingButton_clicked()
     emit showSetting();
 }
 
-void MenuWindow::on_photosButton_clicked()
-{
-    this->hide();
-    emit showPhotoViewer();
-}
-
-void MenuWindow::on_videoButton_clicked()
-{
-    this->hide();
-    emit showVideosViewer();
-}
-
 void MenuWindow::receivePhotoViewer(){
     this->show();
 }
@@ -67,5 +47,25 @@ void MenuWindow::receiveVideosViewer(){
 }
 
 void MenuWindow::receiveNewMedicalRecord(){
+    this->show();
+}
+
+void MenuWindow::on_medicalRecordButton_clicked()
+{
+    this->hide();
+    emit showMedicalRecords();
+}
+
+void MenuWindow::receiveMedicalRecords(){
+    this->show();
+}
+
+void MenuWindow::on_dbButton_clicked()
+{
+    this->hide();
+    emit showMultimediaLibrary();
+}
+
+void MenuWindow::receiveMedicalLibrary(){
     this->show();
 }

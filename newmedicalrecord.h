@@ -12,13 +12,13 @@ class newMedicalRecord : public QMainWindow
     Q_OBJECT
 
 signals:
-    void showCamera();
+    void showMenu();
 
 public:
     explicit newMedicalRecord(QWidget *parent = nullptr);
     ~newMedicalRecord();
 private slots:
-    void receiveCamera();
+    void receiveMenu();
 
     void Sleep(int msec);
 

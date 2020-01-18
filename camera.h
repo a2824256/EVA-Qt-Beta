@@ -77,7 +77,6 @@ private slots:
     void recordButtonStatus(bool enable);
     void receiveMenu();
     void setCamera(const QCameraInfo &cameraInfo);
-    void timerUpdate();
     void startCamera();
     void stopCamera();
 

@@ -9,7 +9,6 @@ SinglePhotoViewerWindow::SinglePhotoViewerWindow(QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(Qt::FramelessWindowHint);
     timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
     timer->start(1000);
 //    Qlog(_photoPath);
 //    QPixmap pixmap(_photoPath);
@@ -23,9 +22,6 @@ SinglePhotoViewerWindow::~SinglePhotoViewerWindow()
     delete ui;
 }
 
-void SinglePhotoViewerWindow::timerUpdate(){
-    ui->datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
-}
 
 void SinglePhotoViewerWindow::receiveSinglePhoto(QString photoPath){
     _photoPath = photoPath;

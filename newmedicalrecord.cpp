@@ -8,6 +8,7 @@ newMedicalRecord::newMedicalRecord(QWidget *parent) :
     ui(new Ui::newMedicalRecord)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::FramelessWindowHint);
 }
 
 newMedicalRecord::~newMedicalRecord()
@@ -15,10 +16,6 @@ newMedicalRecord::~newMedicalRecord()
     delete ui;
 }
 
-void newMedicalRecord::receiveCamera(){
-    this->show();
-    ui->textBox->setText(Common::_medicalNumber);
-}
 
 void newMedicalRecord::on_number_9_Button_clicked()
 {
@@ -96,7 +93,7 @@ void newMedicalRecord::on_confirmButton_clicked()
         Common::_tips = "提示:当前病历编号"+ Common::_medicalNumber;
         Toast::showTip(tips, nullptr);
         this->hide();
-        emit showCamera();
+        emit showMenu();
     }else{
         tips = "病历编号为空";
         Toast::showTip(tips, nullptr);
@@ -106,7 +103,7 @@ void newMedicalRecord::on_confirmButton_clicked()
 void newMedicalRecord::on_returnButton_clicked()
 {
     this->hide();
-    emit showCamera();
+    emit showMenu();
 }
 
 void newMedicalRecord::Sleep(int msec)
@@ -114,4 +111,8 @@ void newMedicalRecord::Sleep(int msec)
     QTime dieTime = QTime::currentTime().addMSecs(msec);
     while( QTime::currentTime() < dieTime )
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
+void newMedicalRecord::receiveMenu(){
+    this->show();
 }

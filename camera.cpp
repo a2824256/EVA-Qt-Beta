@@ -85,15 +85,6 @@ Camera::Camera() : ui(new Ui::Camera)
     ui->takeImageButton->setFlat(true);
     ui->takeImageButton->setStyleSheet("QPushButton{border-top:0px solid #e8f3f9;background:  transparent; }");
     ui->takeImageButton->setFocusPolicy(Qt::NoFocus);
-    ui->progressBar->raise();
-    ui->datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
-    QTimer *timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
-    timer->start(1000);
-    ui->datetime->raise();
-    ui->tips->raise();
-    ui->battery->raise();
-    ui->tips->raise();
 
     ui->recordButton->raise();
     ui->menuButton->raise();
@@ -126,9 +117,6 @@ void Camera::recordButtonStatus(bool enable){
     }
 }
 
-void Camera::timerUpdate(){
-    ui->datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
-}
 
 void Camera::setCamera(const QCameraInfo &cameraInfo)
 {
@@ -309,30 +297,35 @@ void Camera::updateLockStatus(QCamera::LockStatus status, QCamera::LockChangeRea
     switch (status) {
     case QCamera::Searching:
         indicationColor = Qt::yellow;
-//        ui->statusbar->showMessage(tr("Focusing..."));
-//        ui->lockButton->setText(tr("Focusing..."));
         break;
     case QCamera::Locked:
         indicationColor = Qt::darkGreen;
-//        ui->lockButton->setText(tr("Unlock"));
-//        ui->statusbar->showMessage(tr("Focused"), 2000);
         break;
     case QCamera::Unlocked:
         indicationColor = reason == QCamera::LockFailed ? Qt::red : Qt::black;
-//        ui->lockButton->setText(tr("Focus"));
-//        if (reason == QCamera::LockFailed)
-//            ui->statusbar->showMessage(tr("Focus Failed"), 2000);
     }
 
-//    QPalette palette = ui->lockButton->palette();
-//    palette.setColor(QPalette::ButtonText, indicationColor);
-//    ui->lockButton->setPalette(palette);
 }
 
 void Camera::takeImage()
 {
     m_isCapturingImage = true;
-    m_imageCapture->capture();
+    QString qdate = QDateTime::currentDateTime().toString("yyyy-MM-dd_hhmmss");
+    QString qtime = QDateTime::currentDateTime().toString("yyyy-MM");
+    QString mediaFolderPath = Common::_multimediaFolderPath;
+    if(Common::_medicalNumber == ""){
+        mediaFolderPath += "/" + qtime;
+    }else{
+        mediaFolderPath += "/" + Common::_medicalNumber + "_" +qtime;
+    }
+    mediaFolderPath += "-ZXBio";
+    QDir localPath(mediaFolderPath);
+    if (!localPath.exists()) {
+        qDebug()<<localPath.path()<<"不存在"<<endl;
+        localPath.mkpath(localPath.path());
+    }
+    QString imagePath = mediaFolderPath + "/" + qdate + ".jpg";
+    m_imageCapture->capture(imagePath);
 }
 
 void Camera::displayCaptureError(int id, const QCameraImageCapture::Error error, const QString &errorString)
@@ -412,18 +405,12 @@ void Camera::updateRecorderState(QMediaRecorder::State state)
     switch (state) {
     case QMediaRecorder::StoppedState:
         ui->recordButton->setEnabled(true);
-//        ui->pauseButton->setEnabled(true);
-//        ui->stopButton->setEnabled(false);
         break;
     case QMediaRecorder::PausedState:
         ui->recordButton->setEnabled(true);
-//        ui->pauseButton->setEnabled(false);
-//        ui->stopButton->setEnabled(true);
         break;
     case QMediaRecorder::RecordingState:
         ui->recordButton->setEnabled(false);
-//        ui->pauseButton->setEnabled(true);
-//        ui->stopButton->setEnabled(true);
         break;
     }
 }
@@ -462,7 +449,6 @@ void Camera::readyForCapture(bool ready)
 {
     ui->takeImageButton->setEnabled(ready);
     ui->menuButton->setEnabled(ready);
-//    ui->medicalRecordButton->setEnabled(ready);
 }
 
 void Camera::addMask(QPixmap& pm, const QString& text)
@@ -492,7 +478,6 @@ void Camera::imageSaved(int id, const QString &fileName)
     file.open(QIODevice::WriteOnly);
     qpm.save(&file, "JPEG");
     file.close();
-    ui->tips->setText(tr("提示:图片已保存至\"%1\"").arg(latestImagePath));
 }
 
 void Camera::closeEvent(QCloseEvent *event)
@@ -517,8 +502,3 @@ void  Camera::receiveMenu()
     this->show();
 }
 
-
-void Camera::receiveNewMedicalRecord(){
-    this->show();
-    ui->tips->setText(Common::_tips);
-}

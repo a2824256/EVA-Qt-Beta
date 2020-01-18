@@ -36,22 +36,6 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLabel" name="datetime">
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:white</string>
-       </property>
-       <property name="text">
-        <string>Time Loading...</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QLabel" name="tips">
        <property name="maximumSize">
         <size>
@@ -64,44 +48,6 @@
        </property>
        <property name="text">
         <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="battery">
-       <property name="maximumSize">
-        <size>
-         <width>40</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:white</string>
-       </property>
-       <property name="text">
-        <string>电量:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QProgressBar" name="progressBar">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QProgressBar {   color:black;border: 2px solid grey;   border-radius: 5px;   background-color: #FFFFFF;}QProgressBar::chunk {   background-color: #00FF00;   width: 20px;}QProgressBar {   border: 2px solid grey;   border-radius: 5px;   text-align: center;}</string>
-       </property>
-       <property name="value">
-        <number>24</number>
        </property>
       </widget>
      </item>
@@ -242,7 +188,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="photosButton">
+         <widget class="QPushButton" name="dbButton">
           <property name="minimumSize">
            <size>
             <width>280</width>
@@ -301,7 +247,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="videoButton">
+         <widget class="QPushButton" name="medicalRecordButton">
           <property name="minimumSize">
            <size>
             <width>280</width>

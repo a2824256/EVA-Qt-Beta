@@ -14,13 +14,8 @@ VideosViewerWindow::VideosViewerWindow(QWidget *parent) :
     page = 1;
     updatePhotoViewer();
     timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
     timer->start(1000);
     setWindowFlags(Qt::FramelessWindowHint);
-}
-
-void VideosViewerWindow::timerUpdate(){
-    ui->datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
 }
 
 // OpenCV Mat格式图像转 Qt QImage图像

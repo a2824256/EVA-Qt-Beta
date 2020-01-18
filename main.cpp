@@ -55,51 +55,96 @@
 #include "systeminfowindow.h"
 #include "timesettingwindow.h"
 #include "videosettings.h"
-#include "photosviewerwindow.h"
+//#include "photosviewerwindow.h"
 #include "singlephotoviewerwindow.h"
-#include "videosviewerwindow.h"
+//#include "videosviewerwindow.h"
 #include "videoviewerwindow.h"
 #include "newmedicalrecord.h"
+#include "databasewindow.h"
+#include "topbarwindow.h"
+#include "common.h"
 #include <QtWidgets>
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    //页面实例
+    //更新多媒体库根目录路径
+    updatePath();
+    //-------------------页面实例-------------------
+    //摄像头浏览页面
     Camera camera;
+    //设置页面
     SettingWindow setting;
+    //菜单页面
     MenuWindow menu;
+    //系统信息页面
     SystemInfoWindow systeminfo;
+    //系统时间设置页面
     TimeSettingWindow timesetting;
-    PhotosViewerWindow photoviewer;
+    //旧图片浏览页
+    //PhotosViewerWindow photoviewer;
+    //图片浏览页面
     SinglePhotoViewerWindow singlephoto;
-    VideosViewerWindow videosviewer;
+    //旧视频浏览页
+    //VideosViewerWindow videosviewer;
+    //视频播放页面
     VideoViewerWindow videoviewer;
+    //病历页面
     newMedicalRecord newmedicalrecord;
-    //主界面
-    camera.show();
-    //页面跳转
+    //多媒体数据库
+    DatabaseWindow dbwindow;
+    //顶部栏创口
+    TopBarWindow tbwindows;
+    //程序启动显示的第一个页面
+    menu.show();
+    tbwindows.move(menu.x(),menu.y());
+    //-------------------页面跳转-------------------
+    //摄像头预览 -> 菜单
     QObject::connect(&camera,SIGNAL(showMenu()),&menu,SLOT(receiveCamera()));
-    QObject::connect(&camera,SIGNAL(showNewMedicalRecord()),&newmedicalrecord,SLOT(receiveCamera()));
+    //菜单 -> 摄像头预览
     QObject::connect(&menu,SIGNAL(showCamera()),&camera,SLOT(receiveMenu()));
-
-    QObject::connect(&newmedicalrecord,SIGNAL(showCamera()),&menu,SLOT(receiveNewMedicalRecord()));
-
+    //病历 -> 菜单
+    QObject::connect(&newmedicalrecord,SIGNAL(showMenu()),&menu,SLOT(receiveMedicalRecords()));
+    //菜单 -> 多媒体库
+    QObject::connect(&menu,SIGNAL(showMultimediaLibrary()),&dbwindow,SLOT(receiveMenu()));
+    //菜单 -> 病历
+    QObject::connect(&menu,SIGNAL(showMedicalRecords()),&newmedicalrecord,SLOT(receiveMenu()));
+    //设置 -> 菜单
     QObject::connect(&setting,SIGNAL(showMenu()),&menu,SLOT(receiveSetting()));
+    //菜单 -> 设置
     QObject::connect(&menu,SIGNAL(showSetting()),&setting,SLOT(receiveMenu()));
+    //设置 -> 系统信息
     QObject::connect(&setting,SIGNAL(showSystemInfo()),&systeminfo,SLOT(receiveSetting()));
+    //设置 -> 系统时间设置
     QObject::connect(&setting,SIGNAL(showTimeSetting()),&timesetting,SLOT(receiveSetting()));
+    //系统时间设置 -> 设置
     QObject::connect(&timesetting,SIGNAL(showSetting()),&setting,SLOT(receiveTimeSetting()));
+    //系统设置 -> 设置
     QObject::connect(&systeminfo,SIGNAL(showSetting()),&setting,SLOT(receiveSystemInfo()));
-    QObject::connect(&menu,SIGNAL(showPhotoViewer()),&photoviewer,SLOT(receiveMenu()));
-    QObject::connect(&photoviewer,SIGNAL(showMenu()),&menu,SLOT(receivePhotoViewer()));
-    QObject::connect(&singlephoto,SIGNAL(showPhotoViewer()),&photoviewer,SLOT(receivePhoto()));
-    QObject::connect(&menu,SIGNAL(showVideosViewer()),&videosviewer,SLOT(receiveMenu()));
-    QObject::connect(&videosviewer,SIGNAL(showMenu()),&menu,SLOT(receivePhotoViewer()));
-    //视频播放结束
-    QObject::connect(&videoviewer,SIGNAL(showVideosViewer()),&videosviewer,SLOT(receiveVideoStop()));
+    //多媒体库 -> 菜单
+    QObject::connect(&dbwindow,SIGNAL(showMenu()),&menu,SLOT(receiveMedicalLibrary()));
+    //视频播放结束返回多媒体库
+    QObject::connect(&videoviewer,SIGNAL(showVideosViewer()),&dbwindow,SLOT(receiveRet()));
     //跳转+视频路径传递
-    QObject::connect(&videosviewer,SIGNAL(showVideo(QString)),&videoviewer,SLOT(receiveSingleVideo(QString)));
+    QObject::connect(&dbwindow,SIGNAL(showVideo(QString)),&videoviewer,SLOT(receiveSingleVideo(QString)));
     //跳转+图片路径传递
-    QObject::connect(&photoviewer,SIGNAL(showPhoto(QString)),&singlephoto,SLOT(receiveSinglePhoto(QString)));
+    QObject::connect(&dbwindow,SIGNAL(showPhoto(QString)),&singlephoto,SLOT(receiveSinglePhoto(QString)));
+    //-------------------各页面与顶部栏消息连接-------------------
+    //摄像头预览页面
+    QObject::connect(&camera,SIGNAL(showMenu()),&tbwindows,SLOT(tipsUpdate()));
+    //菜单页面
+    QObject::connect(&menu,SIGNAL(showMenu()),&tbwindows,SLOT(tipsUpdate()));
+    //多媒体库
+    QObject::connect(&dbwindow,SIGNAL(showMenu()),&tbwindows,SLOT(tipsUpdate()));
+    //设置页面
+    QObject::connect(&setting,SIGNAL(showMenu()),&tbwindows,SLOT(tipsUpdate()));
+    //视频播放页面
+    QObject::connect(&videoviewer,SIGNAL(showMenu()),&tbwindows,SLOT(tipsUpdate()));
+    //图片浏览页面页面
+    QObject::connect(&singlephoto,SIGNAL(showMenu()),&tbwindows,SLOT(tipsUpdate()));
+    //时间设置页面
+    QObject::connect(&timesetting,SIGNAL(showMenu()),&tbwindows,SLOT(tipsUpdate()));
+    //系统信息页面
+    QObject::connect(&systeminfo,SIGNAL(showMenu()),&tbwindows,SLOT(tipsUpdate()));
     return app.exec();
 };

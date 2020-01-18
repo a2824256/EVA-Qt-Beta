@@ -22,7 +22,6 @@ private:
     QTimer *timer;
 
 private slots:
-    void timerUpdate();
     void receiveSetting();
 
     void on_returnButton_clicked();

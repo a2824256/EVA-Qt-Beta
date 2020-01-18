@@ -10,7 +10,6 @@ PhotosViewerWindow::PhotosViewerWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
     timer->start(1000);
     setWindowFlags(Qt::FramelessWindowHint);
     page = 1;
@@ -28,9 +27,6 @@ void PhotosViewerWindow::receiveMenu(){
     updatePhotoViewer();
 }
 
-void PhotosViewerWindow::timerUpdate(){
-    ui->datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
-}
 
 void PhotosViewerWindow::on_returnButton_clicked()
 {

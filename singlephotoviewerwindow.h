@@ -19,7 +19,6 @@ public:
     ~SinglePhotoViewerWindow();
 private slots:
     void receiveSinglePhoto(QString photoPath);
-    void timerUpdate();
 
 protected:
     bool eventFilter(QObject * watched, QEvent * event);

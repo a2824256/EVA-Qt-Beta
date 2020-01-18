@@ -41,7 +41,6 @@ private:
 
 private slots:
     QImage cvMat2QImage(Mat& mat);
-    void timerUpdate();
     void receiveMenu();
     void preButtonEnable(bool enable);
     void nextButtonEnable(bool enable);

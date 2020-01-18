@@ -39,7 +39,6 @@ private slots:
     void preButtonEnable(bool enable);
     void nextButtonEnable(bool enable);
     void receiveMenu();
-    void timerUpdate();
     void on_returnButton_clicked();
     void updatePhotoViewer();
     void on_nextButton_clicked();

@@ -51,88 +51,6 @@
      <property name="bottomMargin">
       <number>0</number>
      </property>
-     <item>
-      <widget class="QPushButton" name="datetime">
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:white</string>
-       </property>
-       <property name="text">
-        <string>Time Loading...</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="tips">
-       <property name="minimumSize">
-        <size>
-         <width>300</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>300</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:white</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="battery">
-       <property name="maximumSize">
-        <size>
-         <width>40</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:white</string>
-       </property>
-       <property name="text">
-        <string>电量:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QProgressBar" name="progressBar">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QProgressBar {   color:black;border: 2px solid grey;   border-radius: 5px;   background-color: #FFFFFF;}QProgressBar::chunk {   background-color: #00FF00;   width: 20px;}QProgressBar {   border: 2px solid grey;   border-radius: 5px;   text-align: center;}</string>
-       </property>
-       <property name="value">
-        <number>24</number>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="verticalWidget" native="true">
@@ -155,7 +73,7 @@
       <number>20</number>
      </property>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="hardware_version">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -166,12 +84,12 @@
         <string notr="true">color:white;background-color:#FF8C00</string>
        </property>
        <property name="text">
-        <string>硬件版本: Version 1.0</string>
+        <string>硬件版本:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="software_version">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -182,7 +100,39 @@
         <string notr="true">color:white;background-color:#FF8C00</string>
        </property>
        <property name="text">
-        <string>软件版本: Version 0.1 beta</string>
+        <string>软件版本:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="serial_number">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;background-color:#FF8C00</string>
+       </property>
+       <property name="text">
+        <string>序列号:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="batch_number">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;background-color:#FF8C00</string>
+       </property>
+       <property name="text">
+        <string>批号:</string>
        </property>
       </widget>
      </item>
@@ -202,11 +152,33 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <property name="leftMargin">
-      <number>330</number>
+      <number>20</number>
      </property>
      <property name="rightMargin">
       <number>20</number>
      </property>
+     <item>
+      <widget class="QPushButton" name="mtmodeButton">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;background-color:#FF8C00</string>
+       </property>
+       <property name="text">
+        <string>厂家维护</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPushButton" name="returnButton">
        <property name="minimumSize">

@@ -15,5 +15,6 @@
         <file>images/medicalrecord.svg</file>
         <file>images/medicalrecord_disable.svg</file>
         <file>images/medicalrecord_menu.svg</file>
+        <file>images/folder.svg</file>
     </qresource>
 </RCC>

@@ -6,6 +6,7 @@ QT += multimedia multimediawidgets
 HEADERS = \
     camera.h \
     common.h \
+    databasewindow.h \
     menuwindow.h \
     newmedicalrecord.h \
     photosviewerwindow.h \
@@ -14,11 +15,13 @@ HEADERS = \
     systeminfowindow.h \
     timesettingwindow.h \
     toast.h \
+    topbarwindow.h \
     videosviewerwindow.h \
     videoviewerwindow.h
 
 SOURCES = \
     common.cpp \
+    databasewindow.cpp \
     main.cpp \
     camera.cpp \
     menuwindow.cpp \
@@ -29,11 +32,13 @@ SOURCES = \
     systeminfowindow.cpp \
     timesettingwindow.cpp \
     toast.cpp \
+    topbarwindow.cpp \
     videosviewerwindow.cpp \
     videoviewerwindow.cpp
 
 FORMS += \
     camera.ui \
+    databasewindow.ui \
     menuwindow.ui \
     newmedicalrecord.ui \
     photosviewerwindow.ui \
@@ -42,6 +47,7 @@ FORMS += \
     systeminfowindow.ui \
     timesettingwindow.ui \
     toast.ui \
+    topbarwindow.ui \
     videosviewerwindow.ui \
     videoviewerwindow.ui
 

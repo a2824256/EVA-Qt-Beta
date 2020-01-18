@@ -1,6 +1,6 @@
 #ifndef MENUWINDOW_H
 #define MENUWINDOW_H
-
+//#include "topbarwindow.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -16,6 +16,8 @@ signals:
     void showSetting();
     void showPhotoViewer();
     void showVideosViewer();
+    void showMedicalRecords();
+    void showMultimediaLibrary();
 
 public:
     explicit MenuWindow(QWidget *parent = nullptr);
@@ -24,18 +26,20 @@ public:
 private:
     Ui::MenuWindow *ui;
     QTimer *timer;
+//    TopBarWindow *tbwin;
 
 private slots:
     void receiveNewMedicalRecord();
-    void timerUpdate();
     void receiveCamera();
     void receiveSetting();
     void receivePhotoViewer();
     void on_returnButton_clicked();
     void on_settingButton_clicked();
-    void on_photosButton_clicked();
-    void on_videoButton_clicked();
     void receiveVideosViewer();
+    void receiveMedicalRecords();
+    void on_medicalRecordButton_clicked();
+    void on_dbButton_clicked();
+    void receiveMedicalLibrary();
 };
 
 #endif // MENUWINDOW_H
