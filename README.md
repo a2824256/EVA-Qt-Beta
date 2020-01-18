@@ -1,5 +1,4 @@
 # EVA-Qt-Beta
-小主机送检版本-qt版本
 
 ## 开发环境
 - MacOS 10.14.6 & Ubuntu 16.04
