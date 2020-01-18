@@ -47,7 +47,7 @@
 - 拍照&录像 <br/>
 <img src="https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/4851578384434_.pic.jpg" width="716" height="537">
 
-- 图片列表(点击放大) <br/>
+- 图片列表(点击放大) - 已合并为文件管理系统 <br/>
 <img src="https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/4861578385247_.pic.jpg" width="716" height="537">
 
 - 调整系统时间 <br/>
@@ -56,5 +56,5 @@
 - 图片浏览+水印展示 <br/>
 <img src="https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/5121578991713_.pic.jpg" width="716" height="537">
 
-- 视频列表（使用opencv读取每个视频第一帧）
+- 视频列表（使用opencv读取每个视频第一帧）- 已合并为文件管理系统
 <img src="https://github.com/a2824256/EVA-Qt-Beta/blob/master/screenshots/5131578992616_.pic.jpg" width="716" height="537">
